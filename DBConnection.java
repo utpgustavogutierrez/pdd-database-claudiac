@@ -10,13 +10,13 @@ public final class DBConnection {
     private DBConnection() {
         try {
             Class.forName("org.sqlite.JDBC");
-            String dbPath = "jdbc:sqlite:./sqlite-sakila.db";
+            String dbPath = "jdbc:sqlite:./sqlite-sakila.db"; // direccion del archivo donde esta la base de datos
             conn = DriverManager.getConnection(dbPath);
         } catch (Exception exception) {
             System.err.println(exception.getClass().getName() + ": " + exception.getMessage());
             System.exit(0);
         }
-        System.out.println("Opened database successfully");
+        System.out.println("Connection successfully");
     }
 
     public static DBConnection getInstance() {
